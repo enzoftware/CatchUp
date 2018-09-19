@@ -33,6 +33,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.upc.projects.enzoftware.catchup.ui.activities.MainActivity" />
         </activity>
+        <activity
+            android:name=".SourceActivity"
+            android:label="@string/title_activity_source"
+            android:parentActivityName=".ui.activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.upc.projects.enzoftware.catchup.ui.activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
