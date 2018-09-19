@@ -10,7 +10,7 @@ import com.upc.projects.enzoftware.catchup.R
 import com.upc.projects.enzoftware.catchup.model.Source
 import kotlinx.android.synthetic.main.item_source.view.*
 
-class SourcesAdapter(val sources: List<Source>, val context: Context): RecyclerView.Adapter<SourcesAdapter.ViewHolder>() {
+class SourcesAdapter(var sources: List<Source>, val context: Context): RecyclerView.Adapter<SourcesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_source, parent, false))
