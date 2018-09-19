@@ -2,6 +2,7 @@ package com.upc.projects.enzoftware.catchup.ui.adapters
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,13 +19,20 @@ class SourcesAdapter(val sources: List<Source>, val context: Context): RecyclerV
     override fun getItemCount(): Int = sources.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val source = sources.get(position)
-        TODO("Assing logo image")
-        holder.nameTextView.text = source.name
+        val source = sources[position]
+        holder.updateFrom(source)
     }
 
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val logoImageView = view.logoImageView!!
         val nameTextView = view.nameTextView!!
+
+        fun updateFrom(source: Source){
+            logoImageView.setDefaultImageResId(R.mipmap.ic_launcher)
+            logoImageView.setErrorImageResId(R.mipmap.ic_launcher)
+            logoImageView.setImageUrl(source.urlToLogo())
+            Log.d("CatchUp", source.urlToLogo())
+            nameTextView.text = source.name
+        }
     }
 }
