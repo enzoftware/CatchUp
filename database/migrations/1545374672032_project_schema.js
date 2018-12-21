@@ -8,6 +8,10 @@ class ProjectSchema extends Schema {
     this.create('projects', (table) => {
       table.increments()
       table.timestamps()
+      table.string('name')
+      table.text('description')
+      table.integer('customer_id').unsigned()
+      table.foreign('customer_id').references('customers.id').onDelete('cascade') // REFERENCES WOULD MATCH WITH TABLE NAME
     })
   }
 
